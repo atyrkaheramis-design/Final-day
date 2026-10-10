@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday, Special One! 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, serif;
+  background: linear-gradient(
+    135deg,
+    #ffcce5,
+    #eaf7ff,
+    #bde3ff,
+    #ffe6f2
+  );
+  color: #527da8;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 92%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 35px 0;
+  position: relative;
+}
+
+.heart {
+  font-size: 55px;
+  animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+  50% { transform: scale(1.15); }
+}
+
+h1 {
+  color: #e86da8;
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  text-shadow: 2px 2px white;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #608dbb;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.cake {
+  font-size: 75px;
+  margin: 20px 0;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-8px); }
+}
+
+button {
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 13px 23px;
+  background: linear-gradient(
+    90deg,
+    #ff8fbd,
+    #83caff
+  );
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px #83caff55;
+  transition: transform 0.3s;
+  font-family: inherit;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.letter {
+  display: none;
+  margin-top: 25px;
+  padding: 25px 22px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px dashed #91cfff;
+  border-radius: 22px;
+  box-shadow: 0 8px 25px #ff9fc955;
+  color: #638ab6;
+  line-height: 1.9;
+  text-align: left;
+  animation: appear 0.8s ease;
+}
+
+.letter h2 {
+  color: #f078ad;
+  text-align: center;
+}
+
+.letter p {
+  font-size: 16px;
+}
+
+.signature {
+  text-align: center;
+  color: #e86da8;
+  font-weight: bold;
+}
+
+.music-area {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.music-note {
+  font-size: 20px;
+  color: #f078ad;
+  margin: 0 7px;
+}
+
+#musicBtn {
+  min-width: 155px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-heart {
+  position: absolute;
+  bottom: -35px;
+  animation: floatUp 6s linear forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 13px;
+  color: #8c9fbd;
+}
+
+.container > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 400px) {
+  .letter {
+    padding: 20px 15px;
+  }
+
+  .letter p {
+    font-size: 15px;
+  }
+/* Pink and Sky Blue Picture Frame */
+.photo-frame {
+  position: relative;
+  width: 260px;
+  max-width: 90%;
+  margin: 35px auto;
+  padding: 12px 12px 5px;
+  background: linear-gradient(
+    135deg,
+    #ffb6d5,
+    #a8ddff,
+    #fff0f7
+  );
+  border: 3px solid white;
+  border-radius: 22px;
+  box-shadow: 0 8px 22px #91cfff66;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+}
+
+.photo-frame:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+.birthday-photo {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border: 4px solid white;
+  border-radius: 14px;
+}
+
+.photo-heart {
+  position: absolute;
+  top: -20px;
+  right: -12px;
+  z-index: 2;
+  font-size: 35px;
+  filter: drop-shadow(0 3px 3px #e88bb866);
+}
+
+.photo-caption {
+  margin: 12px 0;
+  color: #d85d98;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<main class="container">
+
+  <div class="heart">💗</div>
+
+  <h1>Happy Birthday!</h1>
+
+  <p class="subtitle">
+    To someone who makes the world<br>
+    a brighter and kinder place... 🩵
+  </p>
+
+  <div class="cake">🎂</div>
+
+<!-- Cute Birthday Picture Frame -->
+<div class="photo-frame">
+  <div class="photo-heart">💗</div>
+
+  <img
+    src="crush.jpg"
+    alt="A special birthday memory"
+    class="birthday-photo"
+  >
+
+  <p class="photo-caption">
+    ✧ A special person in my little world ✧ 🩵
+  </p>
+</div>
+
+
+  <p>Make a wish, birthday star! ✨</p>
+
+  <button onclick="openLetter()">
+    💌 Open Your Letter 💌
+  </button>
+
+  <section class="letter" id="letter">
+
+    <h2>Dear Birthday Star, 💕</h2>
+
+    <p>Happy birthday to you! 🎂🩷</p>
+
+    <p>
+      Today is a special day because it's the day
+      someone as wonderful as you came into this
+      world. And honestly, I'm really glad you did.
+    </p>
+
+    <p>
+      I hope this new chapter of your life brings
+      you endless happiness, beautiful memories,
+      genuine friends, and all the good things
+      your heart deserves. 🩵
+    </p>
+
+    <p>
+      You might not realize it, but your smile can
+      make someone's day brighter. Your kindness,
+      your laughter, and simply being yourself
+      make you someone worth appreciating.
+    </p>
+
+    <p>
+      Maybe I don't always know the right words
+      to say, but I hope you know that someone
+      out here is wishing you the very best.
+      Someone who feels a little happier just
+      knowing you exist. 🌷
+    </p>
+
+    <p>
+      If I could give you one gift, it would be
+      the chance to see yourself through the eyes
+      of those who appreciate you. I hope you'd
+      understand just how special you are. 💗
+    </p>
+
+    <p>
+      Keep dreaming, keep smiling, and never stop
+      being the amazing person you are.
+      May your days be filled with love, peace,
+      and little moments that make you smile.
+    </p>
+
+    <p>
+      Happy birthday once again! I hope this little
+      surprise makes you smile, even just a little.
+      You deserve a beautiful day. 🩷🩵
+    </p>
+
+    <p class="signature">
+      With lots of warmth and a little secret
+      affection... 💌
+    </p>
+
+    <p class="signature">
+      From someone who's happy you're in this world. 💗
+    </p>
+
+    <div class="music-area">
+      <span class="music-note">♫</span>
+
+      <button onclick="toggleMusic()" id="musicBtn">
+        ▶ Play Music
+      </button>
+
+      <span class="music-note">♪</span>
+
+      <p style="font-size: 12px;">
+        A little melody just for your special day 🎶
+      </p>
+    </div>
+
+  </section>
+
+  <div class="footer">
+    Made with 💗 and 🩵, especially for you.
+  </div>
+
+</main>
+
+<!-- Put your music file named birthday.mp3
+     in the same folder as this HTML file. -->
+
+<audio id="music" loop>
+  <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function openLetter() {
+  const letter = document.getElementById("letter");
+
+  letter.style.display = "block";
+
+  letter.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+const music = document.getElementById("music");
+const musicBtn = document.getElementById("musicBtn");
+
+async function toggleMusic() {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicBtn.textContent = "⏸ Pause Music";
+    } catch (error) {
+      alert(
+        "Please add a music file named birthday.mp3 " +
+        "to the same folder as index.html."
+      );
+    }
+  } else {
+    music.pause();
+    musicBtn.textContent = "▶ Play Music";
+  }
+}
+
+function createHeart() {
+  const heart = document.createElement("span");
+
+  heart.className = "floating-heart";
+
+  const decorations = ["💗", "🩵", "💕", "💙", "🌸"];
+  heart.textContent =
+    decorations[Math.floor(Math.random() * decorations.length)];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+  document.getElementById("hearts").appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}
+
+setInterval(createHeart, 600);
+</script>
+
+</body>
+  </html>
+  
